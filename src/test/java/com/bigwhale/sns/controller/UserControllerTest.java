@@ -40,7 +40,7 @@ public class UserControllerTest {
         String password = "password";
 
         // TODO : mocking
-        when(userService.join()).thenReturn(mock(User.class));
+        when(userService.join(userName,password)).thenReturn(mock(User.class));
 
         mockMvc.perform(post("/api/v1/users/join")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -56,7 +56,7 @@ public class UserControllerTest {
         String password = "password";
 
         // TODO : mocking
-        when(userService.join()).thenThrow(new RuntimeException());
+        when(userService.join(userName,password)).thenThrow(new RuntimeException());
 
         mockMvc.perform(post("/api/v1/users/join")
                         .contentType(MediaType.APPLICATION_JSON)

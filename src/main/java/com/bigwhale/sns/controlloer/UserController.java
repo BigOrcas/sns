@@ -17,7 +17,7 @@ public class UserController {
     @PostMapping
     public void join(){
         //join
-        userService.join();
+        userService.join("","");
 
     }
 }
